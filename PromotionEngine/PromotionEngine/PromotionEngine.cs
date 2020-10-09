@@ -1,4 +1,5 @@
-﻿using PromotionEngine.Entities;
+﻿using PromotionEngine.Calculators;
+using PromotionEngine.Entities;
 using System;
 using System.Collections.Generic;
 
@@ -36,7 +37,21 @@ namespace PromotionEngine
         public decimal Calculate()
         {
             decimal totalPrice = 0m;
-            //TODO: Need to write logic here
+            PromotionCalculator calculator;
+            PromotionType[] promotionTypes = { PromotionType.AQuantity, PromotionType.BQuantity, PromotionType.CDQuantity };
+
+            if (this.OrderLines == null || this.OrderLines.Count == 0)
+                return 0m;
+
+            //TODO: Apply promotion calculations
+
+            //Calculate for remaining Skus after applying promotion calculation
+            foreach (OrderLine order in this.OrderLines)
+            {
+                decimal price = this.SkuPrices[order.Sku];
+                totalPrice += order.Quantity * price;
+            }
+
             return totalPrice;
         }
 

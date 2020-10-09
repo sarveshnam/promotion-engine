@@ -18,7 +18,16 @@ namespace PromotionEngine
             if (orderLines == null || orderLines.Count == 0)
                 return 0m;
 
-            //TODO: Need to add rest of the logic here
+            OrderLine skuC = orderLines.Where(o => o.Sku == SkuType.C).FirstOrDefault();
+            OrderLine skuD = orderLines.Where(o => o.Sku == SkuType.D).FirstOrDefault();
+
+            if (skuC != null && skuD != null && skuC.Quantity != 0 && skuD.Quantity != 0)
+            {
+                decimal minQuantity = skuC.Quantity <= skuD.Quantity ? skuC.Quantity : skuD.Quantity;
+                total = minQuantity * this.Price;
+                skuC.Quantity -= minQuantity;
+                skuD.Quantity -= minQuantity;
+            }
             return total;
         }
     }
