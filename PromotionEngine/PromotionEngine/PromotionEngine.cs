@@ -43,7 +43,12 @@ namespace PromotionEngine
             if (this.OrderLines == null || this.OrderLines.Count == 0)
                 return 0m;
 
-            //TODO: Apply promotion calculations
+            //Apply promotion calculations
+            foreach (PromotionType type in promotionTypes)
+            {
+                calculator = PromotionCalculatorFactory.GetPromotionCalculator(type);
+                totalPrice += calculator.Calculate(this.OrderLines);
+            }
 
             //Calculate for remaining Skus after applying promotion calculation
             foreach (OrderLine order in this.OrderLines)
