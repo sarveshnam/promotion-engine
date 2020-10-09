@@ -13,7 +13,7 @@ namespace PromotionEngine.Tests
             PromotionEngine engine = new PromotionEngine("A");
 
             //Act
-            decimal actualTotal = 100;  //TODO: Need to call engine.Calculate();
+            decimal actualTotal = engine.Calculate();
 
             //Assert
             decimal expectedTotal = 100;
@@ -27,7 +27,7 @@ namespace PromotionEngine.Tests
             PromotionEngine engine = new PromotionEngine("B");
 
             //Act
-            decimal actualTotal = 370;  //TODO: Need to call engine.Calculate();
+            decimal actualTotal = engine.Calculate();
 
             //Assert
             decimal expectedTotal = 370;
