@@ -19,10 +19,25 @@ namespace PromotionEngine.Calculators
             this.IsActive = isActive;
         }
 
+        //Provided basic implementation for promotion calculation
+        //This calculation is applicable for Promotion on skus A and B
+        //For the promotion based on skus C and D, the implementation is provided in CDQuantityCalculator
         public virtual decimal Calculate(IList<OrderLine> orderLines)
         {
             decimal total = 0m;
-            //TODO: Need to write logic here
+            if (orderLines == null || orderLines.Count == 0 || !this.IsActive)
+                return 0m;
+
+            foreach (var s in this.Sku)
+            {
+                OrderLine orderLineSku = orderLines.Where(o => o.Sku == s.Key).FirstOrDefault();
+                if (orderLineSku != null)
+                {
+                    int promotionSets = (int)(orderLineSku.Quantity / s.Value);
+                    total = promotionSets * this.Price;
+                    orderLineSku.Quantity -= promotionSets * s.Value;
+                }
+            }
             return total;
         }
     }
