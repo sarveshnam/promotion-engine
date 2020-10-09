@@ -33,7 +33,7 @@ namespace PromotionEngine
         }
 
         static void Main(string[] args)
-        {
+        {            
         }
 
         private IList<OrderLine> GetOrderLines(string scenario)
