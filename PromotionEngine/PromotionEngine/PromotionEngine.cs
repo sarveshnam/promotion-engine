@@ -1,13 +1,25 @@
-﻿using System;
+﻿using PromotionEngine.Entities;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PromotionEngine
 {
     class PromotionEngine
     {
+        internal IList<PromotionType> Promotions { set; get; }
+
+        public IList<OrderLine> OrderLines { get; set; }
+
+        //Constructor
+        public PromotionEngine(string scenario)
+        {
+            Promotions = new List<PromotionType>()
+            {
+                PromotionType.AQuantity,
+                PromotionType.BQuantity,
+                PromotionType.CDQuantity
+            };
+        }
+
         static void Main(string[] args)
         {
         }
