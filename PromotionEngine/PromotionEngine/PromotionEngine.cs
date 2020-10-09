@@ -1,4 +1,5 @@
 ﻿using PromotionEngine.Entities;
+using System;
 using System.Collections.Generic;
 
 namespace PromotionEngine
@@ -32,8 +33,28 @@ namespace PromotionEngine
             OrderLines = this.GetOrderLines(scenario);
         }
 
+        public decimal Calculate()
+        {
+            decimal totalPrice = 0m;
+            //TODO: Need to write logic here
+            return totalPrice;
+        }
+
         static void Main(string[] args)
-        {            
+        {
+            //Scenario A
+            PromotionEngine scenarioA = new PromotionEngine("A");
+            Console.WriteLine($"Scenario A - Total : {scenarioA.Calculate()}");
+
+            //Scenario B
+            PromotionEngine scenarioB = new PromotionEngine("B");
+            Console.WriteLine($"Scenario B - Total : {scenarioB.Calculate()}");
+
+            //Scenario C
+            PromotionEngine scenarioC = new PromotionEngine("C");
+            Console.WriteLine($"Scenario C - Total : {scenarioC.Calculate()}");
+
+            Console.ReadLine();
         }
 
         private IList<OrderLine> GetOrderLines(string scenario)
