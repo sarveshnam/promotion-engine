@@ -5,6 +5,9 @@ D:\Archive\Personal\promotion-engine\PromotionEngine\PromotionEngine.Tests\bin\D
 D:\Archive\Personal\promotion-engine\PromotionEngine\PromotionEngine.Tests\bin\Debug\PromotionEngine.Tests.pdb
 D:\Archive\Personal\promotion-engine\PromotionEngine\PromotionEngine.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
 D:\Archive\Personal\promotion-engine\PromotionEngine\PromotionEngine.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+D:\Archive\Personal\promotion-engine\PromotionEngine\PromotionEngine.Tests\bin\Debug\PromotionEngine.exe
+D:\Archive\Personal\promotion-engine\PromotionEngine\PromotionEngine.Tests\bin\Debug\PromotionEngine.pdb
+D:\Archive\Personal\promotion-engine\PromotionEngine\PromotionEngine.Tests\bin\Debug\PromotionEngine.exe.config
 D:\Archive\Personal\promotion-engine\PromotionEngine\PromotionEngine.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
 D:\Archive\Personal\promotion-engine\PromotionEngine\PromotionEngine.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
 D:\Archive\Personal\promotion-engine\PromotionEngine\PromotionEngine.Tests\obj\Debug\PromotionEngine.Tests.csprojAssemblyReference.cache

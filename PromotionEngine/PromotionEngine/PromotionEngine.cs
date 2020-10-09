@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace PromotionEngine
 {
-    class PromotionEngine
+    public class PromotionEngine
     {
         internal IList<PromotionType> Promotions { get; set; }
 
