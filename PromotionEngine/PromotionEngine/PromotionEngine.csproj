@@ -43,7 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Entities\OrderLine.cs" />
+    <Compile Include="Entities\PromotionType.cs" />
+    <Compile Include="Entities\SkuType.cs" />
+    <Compile Include="PromotionEngine.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PromotionEngine
 {
-    class Program
+    class PromotionEngine
     {
         static void Main(string[] args)
         {
