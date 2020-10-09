@@ -47,6 +47,7 @@
     <Compile Include="Calculators\BQuantityCalculator.cs" />
     <Compile Include="Calculators\CDQuantityCalculator.cs" />
     <Compile Include="Calculators\PromotionCalculator.cs" />
+    <Compile Include="Calculators\PromotionCalculatorFactory.cs" />
     <Compile Include="Entities\OrderLine.cs" />
     <Compile Include="Entities\PromotionType.cs" />
     <Compile Include="Entities\SkuType.cs" />
