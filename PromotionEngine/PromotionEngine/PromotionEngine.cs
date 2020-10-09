@@ -14,7 +14,7 @@ namespace PromotionEngine
         public IList<OrderLine> OrderLines { get; set; }
 
         //Constructor
-        public PromotionEngine(string scenario)
+        public PromotionEngine(IList<OrderLine> orderLines)
         {
             Promotions = new List<PromotionType>()
             {
@@ -31,7 +31,7 @@ namespace PromotionEngine
                 {SkuType.D, 15m }
             };
 
-            OrderLines = this.GetOrderLines(scenario);
+            OrderLines = orderLines;
         }
 
         public decimal Calculate()
@@ -63,21 +63,24 @@ namespace PromotionEngine
         static void Main(string[] args)
         {
             //Scenario A
-            PromotionEngine scenarioA = new PromotionEngine("A");
+            IList<OrderLine> orderLines = PromotionEngine.GetOrderLines("A");
+            PromotionEngine scenarioA = new PromotionEngine(orderLines);
             Console.WriteLine($"Scenario A - Total : {scenarioA.Calculate()}");
 
             //Scenario B
-            PromotionEngine scenarioB = new PromotionEngine("B");
+            orderLines = PromotionEngine.GetOrderLines("B");
+            PromotionEngine scenarioB = new PromotionEngine(orderLines);
             Console.WriteLine($"Scenario B - Total : {scenarioB.Calculate()}");
 
             //Scenario C
-            PromotionEngine scenarioC = new PromotionEngine("C");
+            orderLines = PromotionEngine.GetOrderLines("C");
+            PromotionEngine scenarioC = new PromotionEngine(orderLines);
             Console.WriteLine($"Scenario C - Total : {scenarioC.Calculate()}");
 
             Console.ReadLine();
         }
 
-        private IList<OrderLine> GetOrderLines(string scenario)
+        private static IList<OrderLine> GetOrderLines(string scenario)
         {
             IList<OrderLine> orderLines;
             switch (scenario)
