@@ -41,7 +41,7 @@ namespace PromotionEngine.Tests
             PromotionEngine engine = new PromotionEngine("C");
 
             //Act
-            decimal actualTotal = 280;  //TODO: Need to call engine.Calculate();
+            decimal actualTotal = engine.Calculate();
 
             //Assert
             decimal expectedTotal = 280;
