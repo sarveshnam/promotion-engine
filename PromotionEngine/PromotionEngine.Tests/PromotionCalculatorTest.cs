@@ -51,5 +51,20 @@ namespace PromotionEngine.Tests
             decimal expectedTotal = 280;
             Assert.AreEqual(expectedTotal, actualTotal);
         }
+
+        [TestMethod]
+        public void EmptySkusTest()
+        {
+            //Arrange
+            IList<OrderLine> orderLines = PromotionEngine.GetOrderLines("D");
+            PromotionEngine engine = new PromotionEngine(orderLines);
+
+            //Act
+            decimal actualTotal = engine.Calculate();
+
+            //Assert
+            decimal expectedTotal = 0;
+            Assert.AreEqual(expectedTotal, actualTotal);
+        }
     }
 }

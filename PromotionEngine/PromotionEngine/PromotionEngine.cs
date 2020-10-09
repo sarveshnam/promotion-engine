@@ -110,6 +110,11 @@ namespace PromotionEngine
                         new OrderLine(SkuType.D, 1)
                     };
                     break;
+                case "E":
+                    orderLines = new List<OrderLine>()
+                    {
+                    };
+                    break;
                 default:
                     orderLines = new List<OrderLine>();
                     break;
