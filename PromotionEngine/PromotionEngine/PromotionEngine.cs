@@ -80,7 +80,7 @@ namespace PromotionEngine
             Console.ReadLine();
         }
 
-        private static IList<OrderLine> GetOrderLines(string scenario)
+        public static IList<OrderLine> GetOrderLines(string scenario)
         {
             IList<OrderLine> orderLines;
             switch (scenario)

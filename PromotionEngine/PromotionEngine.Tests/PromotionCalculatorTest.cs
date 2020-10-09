@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using PromotionEngine;
+using PromotionEngine.Entities;
+using System.Collections.Generic;
 
 namespace PromotionEngine.Tests
 {
@@ -10,7 +11,8 @@ namespace PromotionEngine.Tests
         public void ScenarioATest()
         {
             //Arrange
-            PromotionEngine engine = new PromotionEngine("A");
+            IList<OrderLine> orderLines = PromotionEngine.GetOrderLines("A");
+            PromotionEngine engine = new PromotionEngine(orderLines);
 
             //Act
             decimal actualTotal = engine.Calculate();
@@ -24,7 +26,8 @@ namespace PromotionEngine.Tests
         public void ScenarioBTest()
         {
             //Arrange
-            PromotionEngine engine = new PromotionEngine("B");
+            IList<OrderLine> orderLines = PromotionEngine.GetOrderLines("B");
+            PromotionEngine engine = new PromotionEngine(orderLines);
 
             //Act
             decimal actualTotal = engine.Calculate();
@@ -38,7 +41,8 @@ namespace PromotionEngine.Tests
         public void ScenarioCTest()
         {
             //Arrange
-            PromotionEngine engine = new PromotionEngine("C");
+            IList<OrderLine> orderLines = PromotionEngine.GetOrderLines("C");
+            PromotionEngine engine = new PromotionEngine(orderLines);
 
             //Act
             decimal actualTotal = engine.Calculate();
